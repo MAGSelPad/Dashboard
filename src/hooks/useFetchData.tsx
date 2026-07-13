@@ -10,7 +10,7 @@ export default function useFetchData() : OpenMeteoResponse | undefined {
         const fetchData = async () => {
             try {
                 const response = await fetch(URL);
-                if (!response.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const jsonData: OpenMeteoResponse = await response.json();
                 setData(jsonData);
             } catch (error) {
